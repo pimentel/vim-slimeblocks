@@ -1,4 +1,4 @@
-function! r#slimeblocks#RSlimeBlocksFunction()
+function! r#slimeblocks#SlimeBlocksFunction()
 " function! s:RSlimeBlocksFunction()
   let save_cursor=winsaveview()
   let i = line('.')
@@ -35,5 +35,5 @@ function! r#slimeblocks#RSlimeBlocksFunction()
   call winrestview(save_cursor)
 endfunction
 
-let b:SlimeBlocksFunction = function('r#slimeblocks#RSlimeBlocksFunction')
+let b:SlimeBlocksFunction = function('r#slimeblocks#SlimeBlocksFunction')
 " let b:SlimeBlocksFunction = function('<SID>RSlimeBlocksFunction')

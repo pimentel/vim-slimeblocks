@@ -1,4 +1,4 @@
-function! python#slimeblocks#RSlimeBlocksFunction()
+function! python#slimeblocks#SlimeBlocksFunction()
   let save_cursor=winsaveview()
   call winrestview(save_cursor)
   let i = line('.')
@@ -36,4 +36,4 @@ function! python#slimeblocks#RSlimeBlocksFunction()
 
 endfunction
 
-let b:SlimeBlocksFunction = function('python#slimeblocks#RSlimeBlocksFunction')
+let b:SlimeBlocksFunction = function('python#slimeblocks#SlimeBlocksFunction')
