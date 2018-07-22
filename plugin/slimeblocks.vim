@@ -3,6 +3,8 @@
 " endif
 " let g:loaded_slimeblocks = 1
 
+let g:SlimeBlocksVerbose = 1
+
 function! s:SlimeBlocksFunctionGeneric()
   echoerr "slimeblocks: filetype not recognized"
 endfunction

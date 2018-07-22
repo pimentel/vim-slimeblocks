@@ -5,19 +5,49 @@ to a REPL.
 
 This project is very alpha and basically only built to suit my needs.
 
-Current support:
+## functions
 
-- R
+- `b:SlimeBlocksFunction()` searches backwards starting at the current line for a function. The code is then sent to your REPL using `:SlimeSend`.
 
-Planned support:
+## R support
 
-- python
+### `b:SlimeBlocksFunction()`
 
-## mapping
+Recognized functions start like this:
 
-So far the only functionality is sending a function.
+```r
+function_name123 <- function(...)
+```
+
+Assignment can be done via `<-` or `=`.
+
+The end of a function is denoted by beginning of a line with `}`.
+
+## python support
+
+### `b:SlimeBlocksFunction()`
+
+Recognized functions start like this:
+
+```python
+def function_name123(...)
+```
+
+After finding the beginning, it looks for the end defined by a non-comment character in the first column.
+It then backtracks to find the first indented line.
+
+# mapping
+
 Suggested mapping in normal mode:
 
-```vimscript
-noremap <Leader><Leader>f :call b:SlimeBlocksFunction()
+```vim
+noremap <Leader><Leader>f :call b:SlimeBlocksFunction()<cr>
+```
+
+## configuration
+
+By default, the following will output a message when sending a block:
+
+```
+let g:SlimeBlocksVerbose = 1
 ```

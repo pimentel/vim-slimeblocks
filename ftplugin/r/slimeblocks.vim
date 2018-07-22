@@ -26,6 +26,10 @@ function! r#slimeblocks#RSlimeBlocksFunction()
   endif
   let end_of_function = i
 
+  if g:SlimeBlocksVerbose
+    echom "SlimeBlocksFunction (" . start_of_function . ", " . end_of_function . ")"
+  endif
+
   :exe start_of_function . "," . end_of_function "SlimeSend"
 
   call winrestview(save_cursor)
