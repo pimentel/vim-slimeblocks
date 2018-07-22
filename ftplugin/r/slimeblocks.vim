@@ -30,6 +30,13 @@ function! r#slimeblocks#SlimeBlocksFunction()
     echom "SlimeBlocksFunction (" . start_of_function . ", " . end_of_function . ")"
   endif
 
+  let cursor_row = save_cursor.lnum
+
+  if !(start_of_function <= cursor_row && cursor_row <= end_of_function)
+    echoerr "SlimeBlocksFunction: not within function range"
+    return
+  endif
+
   :exe start_of_function . "," . end_of_function "SlimeSend"
 
   call winrestview(save_cursor)

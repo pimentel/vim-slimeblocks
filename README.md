@@ -33,7 +33,7 @@ let g:SlimeBlocksVerbose = 1
 
 ## functions
 
-- `b:SlimeBlocksFunction()` searches backwards starting at the current line for a function. The code is then sent to your REPL using `:SlimeSend`.
+- `b:SlimeBlocksFunction()` searches backwards starting at the current line for a function. The code is then sent to your REPL using `:SlimeSend`. It also requires you to be within the function block.
 
 ## R support
 
