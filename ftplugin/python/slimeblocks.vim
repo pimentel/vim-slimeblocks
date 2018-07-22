@@ -34,6 +34,7 @@ function! python#slimeblocks#SlimeBlocksFunction()
 
   :exe start_of_function . "," . end_of_function "SlimeSend"
 
+  call winrestview(save_cursor)
 endfunction
 
 let b:SlimeBlocksFunction = function('python#slimeblocks#SlimeBlocksFunction')
