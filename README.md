@@ -21,6 +21,7 @@ Suggested mapping in normal mode:
 
 ```vim
 noremap <Leader><Leader>f :call b:SlimeBlocksFunction()<cr>
+noremap <Leader><Leader>m :call b:SlimeBlocksFenced()<cr>
 ```
 
 ## configuration
@@ -30,6 +31,10 @@ By default, the following will output a message when sending a block:
 ```
 let g:SlimeBlocksVerbose = 1
 ```
+
+## markdown support
+
+- `b:SlimeBlocksFenced()` searched for a Markdown-style fenced block in all files.
 
 ## functions
 
