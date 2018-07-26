@@ -36,6 +36,10 @@ let g:SlimeBlocksVerbose = 1
 
 - `b:SlimeBlocksFenced()` searched for a Markdown-style fenced block in all files.
 
+### known issues
+
+- If you are in between blocks, it will send the code in between. This is because it simply looks backwards then forwards for backticks. This can be fixed by requiring fully qualified Markdown blocks (e.g. containing the language type) but I don't want to be that strict. Just don't call the function between blocks...
+
 ## functions
 
 - `b:SlimeBlocksFunction()` searches backwards starting at the current line for a function. The code is then sent to your REPL using `:SlimeSend`. It also requires you to be within the function block.
