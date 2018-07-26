@@ -5,7 +5,7 @@ to a REPL.
 
 This project is very alpha and basically only built to suit my needs.
 
-# Installation
+# installation
 
 Depends on [vim-slime](https://github.com/jpalardy/vim-slime).
 If you are using [vim-plug](https://github.com/junegunn/vim-plug) as your package manager, put this in you `.vimrc`:
@@ -24,7 +24,7 @@ noremap <Leader><Leader>f :call b:SlimeBlocksFunction()<cr>
 noremap <Leader><Leader>m :call b:SlimeBlocksFenced()<cr>
 ```
 
-## configuration
+# configuration
 
 By default, the following will output a message when sending a block:
 
@@ -32,15 +32,15 @@ By default, the following will output a message when sending a block:
 let g:SlimeBlocksVerbose = 1
 ```
 
-## markdown support
+# markdown support
 
-- `b:SlimeBlocksFenced()` searched for a Markdown-style fenced block in all files.
+- `b:SlimeBlocksFenced()` searches for a Markdown-style fenced block in all files.
 
-### known issues
+## known issues
 
-- If you are in between blocks, it will send the code in between. This is because it simply looks backwards then forwards for backticks. This can be fixed by requiring fully qualified Markdown blocks (e.g. containing the language type) but I don't want to be that strict. Just don't call the function between blocks...
+- If you are in between blocks, it will send the text in between. This is because it simply looks backwards then forwards for backticks. This can be fixed by requiring fully qualified Markdown blocks (e.g. containing the language type) but I don't want to be that strict. Just don't call the function between blocks...
 
-## functions
+# functions
 
 - `b:SlimeBlocksFunction()` searches backwards starting at the current line for a function. The code is then sent to your REPL using `:SlimeSend`. It also requires you to be within the function block.
 
